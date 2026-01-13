@@ -1,5 +1,5 @@
 {
-  "$schema": "../../../../schemas/nfc-hunt-page.schema.json",
+  "$schema": "../../ios-app/Resources/BundledContent/schemas/nfc-hunt-page.schema.json",
   "tagRef": {
     "tagID": "TAGXXX",
     "room": "Foyer",

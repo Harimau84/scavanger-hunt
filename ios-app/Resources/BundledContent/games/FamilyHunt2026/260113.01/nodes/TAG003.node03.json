@@ -1,0 +1,162 @@
+{
+  "$schema": "../../../../schemas/nfc-hunt-page.schema.json",
+  "tagRef": {
+    "tagID": "TAG003",
+    "room": "UpstairsCommonBathroom",
+    "object": "Toilet"
+  },
+  "node": 3,
+  "game": {
+    "gameName": "FamilyHunt2026",
+    "gameVersion": "260113.01"
+  },
+  "defaults": {
+    "locale": "en-US",
+    "timeLimitSeconds": 900,
+    "cooldownSeconds": 180,
+    "maxHints": 3
+  },
+  "gating": {
+    "requires": [2],
+    "strictOrder": true,
+    "unlockOnScan": true
+  },
+  "pages": [
+    {
+      "level": 1,
+      "characteristics": {
+        "label": "kiddos",
+        "minAge": 5,
+        "maxAge": 8
+      },
+      "contents": {
+        "pageID": "P003-1",
+        "UIInfo": {
+          "title": "Bubble Brain Time!",
+          "subtitle": "You made it upstairs—high five, hero!",
+          "picture": true
+        },
+        "lessonPuzzle": {
+          "backgroundText": "Bathrooms are places where we keep things clean. Washing hands with soap helps chase away germs that you can’t see. Soap grabs the yucky stuff and water whooshes it away!",
+          "question": "When should you wash your hands?",
+          "answers": [
+            { "id": 1, "text": "After using the bathroom", "isCorrect": true },
+            { "id": 2, "text": "Only on Tuesdays", "isCorrect": false },
+            { "id": 3, "text": "Never, because hands are magical", "isCorrect": false },
+            { "id": 4, "text": "Only if your hands are wearing gloves", "isCorrect": false }
+          ],
+          "successResponse": "Yes! Super clean choice! 🧼✨ Next clue unlocked!",
+          "failureResponse": "Almost! Think about staying healthy—try again, champion! 🌟"
+        },
+        "clueToNextTag": {
+          "text": "Now it’s time to go on a BIG adventure… down, down, down to the basement! Find the rec-room where fun happens. Look for a mirror that shows your awesome face. The next tag is waiting near that mirror—like a secret reflection friend!",
+          "hint1": "Go downstairs to the basement (down the stairs).",
+          "hint2": "Find the rec-room—the fun room for games or hanging out.",
+          "hint3": "Look near the mirror in the basement rec-room."
+        }
+      }
+    },
+    {
+      "level": 2,
+      "characteristics": {
+        "label": "tweens",
+        "minAge": 9,
+        "maxAge": 12
+      },
+      "contents": {
+        "pageID": "P003-2",
+        "UIInfo": {
+          "title": "Clean Hands, Clever Mind",
+          "subtitle": "You’ve unlocked another step—keep it moving.",
+          "picture": true
+        },
+        "lessonPuzzle": {
+          "backgroundText": "Soap helps remove germs because it breaks down oils and grime that germs stick to. Scrubbing for about 20 seconds gives the soap time to work and helps rinse everything away.",
+          "question": "About how long should you scrub with soap when washing your hands?",
+          "answers": [
+            { "id": 1, "text": "About 20 seconds", "isCorrect": true },
+            { "id": 2, "text": "2 seconds", "isCorrect": false },
+            { "id": 3, "text": "2 minutes every time", "isCorrect": false },
+            { "id": 4, "text": "No scrubbing needed—just water", "isCorrect": false }
+          ],
+          "successResponse": "Correct. Smooth and smart. ✅ Next clue is yours.",
+          "failureResponse": "Not quite—think of the 'happy birthday' trick. Try again."
+        },
+        "clueToNextTag": {
+          "text": "Next scan is in the basement. Head to the rec-room (the hangout/game area). You’re looking for a mirror—something reflective where you can see yourself. The next tag is staged near that mirror.",
+          "hint1": "Basement level—go down the stairs.",
+          "hint2": "Find the rec-room (fun/hangout space).",
+          "hint3": "Near the mirror in the basement rec-room."
+        }
+      }
+    },
+    {
+      "level": 3,
+      "characteristics": {
+        "label": "youths",
+        "minAge": 13,
+        "maxAge": 17
+      },
+      "contents": {
+        "pageID": "P003-3",
+        "UIInfo": {
+          "title": "Hygiene Is Systems Engineering",
+          "subtitle": "Small actions, big outcomes.",
+          "picture": true
+        },
+        "lessonPuzzle": {
+          "backgroundText": "Handwashing is a prevention system: soap acts as a surfactant that helps lift oils and particles from skin. Friction plus time improves removal, and running water carries contaminants away.",
+          "question": "Which combination is most important for effective handwashing?",
+          "answers": [
+            { "id": 1, "text": "Soap + friction + enough time", "isCorrect": true },
+            { "id": 2, "text": "Hot water only", "isCorrect": false },
+            { "id": 3, "text": "Rinsing quickly with no soap", "isCorrect": false },
+            { "id": 4, "text": "Drying hands without washing first", "isCorrect": false }
+          ],
+          "successResponse": "Correct. Prevention wins. 🧠✅ Next clue unlocked.",
+          "failureResponse": "Not it. Think: soap needs friction and time to do its job."
+        },
+        "clueToNextTag": {
+          "text": "Next location: basement rec-room. Find the mirror—any reflective surface meant for checking your appearance. The next tag is placed near that mirror, in plain reach, not buried.",
+          "hint1": "Basement. Rec-room.",
+          "hint2": "Look for something reflective: mirror, framed glass, or a wall-mounted mirror.",
+          "hint3": "Near the mirror in the basement rec-room."
+        }
+      }
+    },
+    {
+      "level": 4,
+      "characteristics": {
+        "label": "adults",
+        "minAge": 18,
+        "maxAge": 99
+      },
+      "contents": {
+        "pageID": "P003-4",
+        "UIInfo": {
+          "title": "Sanitation and Signal Flow",
+          "subtitle": "You’re clearing checkpoints—keep the tempo.",
+          "picture": true
+        },
+        "lessonPuzzle": {
+          "backgroundText": "Handwashing reduces transmission pathways by mechanically removing contaminants. Soap disrupts oils, friction increases removal, and sufficient duration improves effectiveness before rinse carry-off.",
+          "question": "What best explains why soap-and-scrub handwashing works?",
+          "answers": [
+            { "id": 1, "text": "Soap loosens oils; friction lifts debris; time improves removal", "isCorrect": true },
+            { "id": 2, "text": "Soap sterilizes skin instantly on contact", "isCorrect": false },
+            { "id": 3, "text": "Warm water alone kills all pathogens", "isCorrect": false },
+            { "id": 4, "text": "Dry towels remove germs without washing", "isCorrect": false }
+          ],
+          "successResponse": "Correct. Proceed to the next node. ✅",
+          "failureResponse": "Incorrect. The mechanism is removal and disruption, not instant sterilization. Try again."
+        },
+        "clueToNextTag": {
+          "text": "Proceed to the basement rec-room. Locate the mirror. Next tag is staged adjacent to the mirror on a reachable surface (not inside drawers or cabinets).",
+          "hint1": "Downstairs to the basement, then into the rec-room.",
+          "hint2": "Mirror is your landmark—reflective, intended for viewing.",
+          "hint3": "Near the mirror in the basement rec-room."
+        }
+      }
+    }
+  ]
+}

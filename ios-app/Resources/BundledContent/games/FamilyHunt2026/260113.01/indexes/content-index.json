@@ -1,0 +1,71 @@
+{
+  "indexFormatVersion": "1.0",
+  "game": {
+    "gameName": "FamilyHunt2026",
+    "gameVersion": "260113.01"
+  },
+  "generated": {
+    "generatedAt": "2026-01-13T20:41:27Z",
+    "generatedBy": "scripts/build/generate_content_index.py",
+    "sourceRoot": "data"
+  },
+  "defaults": {
+    "locale": "en-US"
+  },
+  "nodes": [
+    {
+      "node": 1,
+      "tagID": "TAG001",
+      "nodeFile": "nodes/TAG001.node01.json",
+      "pageIDs": [
+        "P001-1",
+        "P001-2",
+        "P001-3",
+        "P001-4"
+      ],
+      "mediaDir": "media/P001"
+    },
+    {
+      "node": 2,
+      "tagID": "TAG002",
+      "nodeFile": "nodes/TAG002.node02.json",
+      "pageIDs": [
+        "P002-1",
+        "P002-2",
+        "P002-3",
+        "P002-4"
+      ],
+      "mediaDir": "media/P002"
+    },
+    {
+      "node": 3,
+      "tagID": "TAG003",
+      "nodeFile": "nodes/TAG003.node03.json",
+      "pageIDs": [
+        "P003-1",
+        "P003-2",
+        "P003-3",
+        "P003-4"
+      ],
+      "mediaDir": "media/P003"
+    },
+    {
+      "node": 4,
+      "tagID": "TAG004",
+      "nodeFile": "nodes/TAG004.node04.json",
+      "pageIDs": [
+        "P004-1",
+        "P004-2",
+        "P004-3",
+        "P004-4"
+      ],
+      "mediaDir": "media/P004"
+    }
+  ],
+  "tagToNode": {
+    "TAG001": 1,
+    "TAG002": 2,
+    "TAG003": 3,
+    "TAG004": 4
+  }
+}

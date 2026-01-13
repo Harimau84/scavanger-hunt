@@ -1,11 +1,11 @@
 {
   "$schema": "../../../../schemas/nfc-hunt-page.schema.json",
   "tagRef": {
-    "tagID": "TAG001",
+    "tagID": "TAGXXX",
     "room": "Foyer",
     "object": "StartBlock"
   },
-  "node": 1,
+  "node": 0,
   "game": {
     "gameName": "FamilyHunt2026",
     "gameVersion": "260113.01"
@@ -26,7 +26,7 @@
       "level": 1,
       "characteristics": { "label": "kiddos", "minAge": 5, "maxAge": 8 },
       "contents": {
-        "pageID": "P001-1",
+        "pageID": "PXXX-1",
         "UIInfo": {
           "title": "The Hunt Begins",
           "subtitle": "Welcome, brave wanderer, let’s start this Quest!",
@@ -56,7 +56,7 @@
       "level": 2,
       "characteristics": { "label": "tweens", "minAge": 9, "maxAge": 12 },
       "contents": {
-        "pageID": "P001-2",
+        "pageID": "PXXX-2",
         "UIInfo": {
           "title": "The Hunt Begins",
           "subtitle": "Your journey is officially underway.",
@@ -86,7 +86,7 @@
       "level": 3,
       "characteristics": { "label": "youths", "minAge": 13, "maxAge": 17 },
       "contents": {
-        "pageID": "P001-3",
+        "pageID": "PXXX-3",
         "UIInfo": {
           "title": "Observation Matters",
           "subtitle": "Details unlock progress.",
@@ -116,7 +116,7 @@
       "level": 4,
       "characteristics": { "label": "adults", "minAge": 18, "maxAge": 99 },
       "contents": {
-        "pageID": "P001-4",
+        "pageID": "PXXX-4",
         "UIInfo": {
           "title": "Initiation Complete",
           "subtitle": "Let’s move.",

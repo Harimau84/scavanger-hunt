@@ -1,0 +1,227 @@
+{
+  "$schema": "../../../../schemas/nfc-hunt-page.schema.json",
+  "tagRef": {
+    "tagID": "TAG004",
+    "room": "RecRoom Bathroom",
+    "object": "Left Sink Drawer"
+  },
+  "node": 4,
+  "game": {
+    "gameName": "FamilyHunt2026",
+    "gameVersion": "260113.01"
+  },
+  "defaults": {
+    "locale": "en-US",
+    "timeLimitSeconds": 900,
+    "cooldownSeconds": 180,
+    "maxHints": 3
+  },
+  "gating": {
+    "requires": [],
+    "strictOrder": true,
+    "unlockOnScan": true
+  },
+  "pages": [
+    {
+      "level": 1,
+      "characteristics": {
+        "label": "kiddos",
+        "minAge": 5,
+        "maxAge": 8
+      },
+      "contents": {
+        "pageID": "P004-1",
+        "UIInfo": {
+          "title": "Bubble Hands & Hidden Drawers",
+          "subtitle": "A tiny place with tiny treasures—can you solve it?",
+          "picture": true
+        },
+        "lessonPuzzle": {
+          "backgroundText": "Drawers hold little things. Bathrooms help us stay clean and healthy. Clean hands keep germs from sneaking into our day.",
+          "question": "Before we eat, what should we do with our hands?",
+          "answers": [
+            {
+              "id": 1,
+              "text": "Blow Nose",
+              "isCorrect": false
+            },
+            {
+              "id": 2,
+              "text": "Stamp Feet",
+              "isCorrect": false
+            },
+            {
+              "id": 3,
+              "text": "wash hands",
+              "isCorrect": true
+            },
+            {
+              "id": 4,
+              "text": "Shout Loudly",
+              "isCorrect": false
+            }
+          ],
+          "successResponse": "Yes! Clean hands are hero hands. 🌟",
+          "failureResponse": "Not quite—think bubbles, water, and a happy scrub!"
+        },
+        "clueToNextTag": {
+          "text": "Now tiptoe to the room with the big warm glow. Look above the fire place—on the mantle, a treasure waits.",
+          "hint1": "Head around the corner to the living area.",
+          "hint2": "What is above the fireplace?",
+          "hint3": "Check the mantle."
+        }
+      }
+    },
+    {
+      "level": 2,
+      "characteristics": {
+        "label": "tweens",
+        "minAge": 9,
+        "maxAge": 12
+      },
+      "contents": {
+        "pageID": "P004-2",
+        "UIInfo": {
+          "title": "The Five-Step Spell",
+          "subtitle": "A clean clue and a warmer place ahead…",
+          "picture": true
+        },
+        "lessonPuzzle": {
+          "backgroundText": "Put these in order for proper handwashing: Wet, Soap, Scrub, Rinse, Dry.",
+          "question": "What’s the correct sequence? (Type the first letters)",
+          "answers": [
+            {
+              "id": 1,
+              "text": "sswrd",
+              "isCorrect": false
+            },
+            {
+              "id": 2,
+              "text": "wssrd",
+              "isCorrect": true
+            },
+            {
+              "id": 3,
+              "text": "wssdr",
+              "isCorrect": false
+            },
+            {
+              "id": 4,
+              "text": "wrssd",
+              "isCorrect": false
+            }
+          ],
+          "successResponse": "Perfect sequence. Your future self thanks you.",
+          "failureResponse": "Close—start with water, end with a towel. Try again!"
+        },
+        "clueToNextTag": {
+          "text": "Next, seek the place where stories warm the room. Above the flames is a shelf of honor—the mantle holds your next mark.",
+          "hint1": "proceed to the Great Room",
+          "hint2": "Wonder over to the fireplace",
+          "hint3": "The mantle."
+        }
+      }
+    },
+    {
+      "level": 3,
+      "characteristics": {
+        "label": "youths",
+        "minAge": 13,
+        "maxAge": 17
+      },
+      "contents": {
+        "pageID": "P004-3",
+        "UIInfo": {
+          "title": "The Hearth’s Riddle",
+          "subtitle": "From hidden drawer to glowing lore…",
+          "picture": true
+        },
+        "lessonPuzzle": {
+          "backgroundText": "A good clue makes you look twice. A good habit makes you live longer. We’re going to use both.",
+          "question": "One word connects BOTH of these: (1) what you do to hands with soap and water, and (2) what fire does to cold air. What word is it?",
+          "answers": [
+            {
+              "id": 1,
+              "text": "Cook",
+              "isCorrect": false
+            },
+            {
+              "id": 2,
+              "text": "Warm",
+              "isCorrect": true
+            },
+            {
+              "id": 3,
+              "text": "Smell",
+              "isCorrect": false
+            },
+            {
+              "id": 4,
+              "text": "Dance",
+              "isCorrect": false
+            }
+          ],
+          "successResponse": "Exactly. Clean and warm—two classic upgrades.",
+          "failureResponse": "Not quite. Think: soap makes one thing better… fire makes another thing better."
+        },
+        "clueToNextTag": {
+          "text": "Go to the heart of the room—where heat gathers and shadows dance. Above the fireplace, the mantle is waiting.",
+          "hint1": "Proceed to the Great Room.",
+          "hint2": "Wonder over to the fireplace",
+          "hint3": "Mantle."
+        }
+      }
+    },
+    {
+      "level": 4,
+      "characteristics": {
+        "label": "adults",
+        "minAge": 18,
+        "maxAge": 99
+      },
+      "contents": {
+        "pageID": "P004-4",
+        "UIInfo": {
+          "title": "Where Warmth Meets Order",
+          "subtitle": "A small drawer. A larger lesson. A hotter destination.",
+          "picture": true
+        },
+        "lessonPuzzle": {
+          "backgroundText": "In systems and in homes, reliability comes from rituals: the small repeated acts that prevent big failures. Hygiene is fault prevention. Organization is latency reduction.",
+          "question": "You found this in a drawer. Now choose the principle: What is the real reason handwashing works so well—removing germs or killing them?",
+          "answers": [
+            {
+              "id": 1,
+              "text": "Removing germs",
+              "isCorrect": true
+            },
+            {
+              "id": 2,
+              "text": "Killing germs",
+              "isCorrect": false
+            },
+            {
+              "id": 3,
+              "text": "Removing fingers",
+              "isCorrect": false
+            },
+            {
+              "id": 4,
+              "text": "Killing fingers",
+              "isCorrect": false
+            }
+          ],
+          "successResponse": "Right. Mostly removal—friction + surfactant + rinse. Simple. Powerful.",
+          "failureResponse": "Not the best choice for this puzzle. Think friction and rinse—not chemical warfare.."
+        },
+        "clueToNextTag": {
+          "text": "Proceed to the room’s hearth—the architectural “center of gravity.” Above the fireplace, the mantle holds the next step.",
+          "hint1": "Proceed to the Great Room.",
+          "hint2": "Wonder over to the fireplace.",
+          "hint3": "Mantle."
+        }
+      }
+    }
+  ]
+}
+

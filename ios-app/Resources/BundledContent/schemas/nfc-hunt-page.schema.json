@@ -1,0 +1,204 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://example.com/schemas/nfc-hunt-page.schema.json",
+  "title": "NFC Scavenger Hunt Page Bundle",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["tagRef", "node", "game", "defaults", "gating", "pages"],
+  "properties": {
+    "$schema": { "type": "string" },
+    "$id": { "type": "string" },
+    "tagRef": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["tagID", "room", "object"],
+      "properties": {
+        "tagID": {
+          "type": "string",
+          "pattern": "^TAG\\d{3}$",
+          "description": "Physical NFC tag identifier, e.g., TAG001"
+        },
+        "room": { "type": "string", "minLength": 1 },
+        "object": { "type": "string", "minLength": 1 }
+      }
+    },
+
+    "node": {
+      "type": "integer",
+      "minimum": 1,
+      "description": "Sequence node number within the game"
+    },
+
+    "game": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["gameName", "gameVersion"],
+      "properties": {
+        "gameName": { "type": "string", "minLength": 1 },
+        "gameVersion": {
+          "type": "string",
+          "pattern": "^\\d{6}\\.\\d{2}$",
+          "description": "Version string like 260113.01 (yyMMdd.##)"
+        }
+      }
+    },
+
+    "defaults": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["locale", "timeLimitSeconds", "cooldownSeconds", "maxHints"],
+      "properties": {
+        "locale": {
+          "type": "string",
+          "pattern": "^[a-z]{2}-[A-Z]{2}$",
+          "description": "BCP-47-ish locale, e.g., en-US"
+        },
+        "timeLimitSeconds": { "type": "integer", "minimum": 0 },
+        "cooldownSeconds": { "type": "integer", "minimum": 0 },
+        "maxHints": { "type": "integer", "minimum": 0, "maximum": 10 }
+      }
+    },
+
+    "gating": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["requires", "strictOrder", "unlockOnScan"],
+      "properties": {
+        "requires": {
+          "type": "array",
+          "description": "IDs of nodes/pages required before unlocking this one",
+          "items": { "type": "integer", "minimum": 1 },
+          "uniqueItems": true
+        },
+        "strictOrder": { "type": "boolean" },
+        "unlockOnScan": { "type": "boolean" }
+      }
+    },
+
+    "pages": {
+      "type": "array",
+      "minItems": 1,
+      "items": { "$ref": "#/$defs/pageVariant" }
+    }
+  },
+
+  "$defs": {
+    "pageVariant": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["level", "characteristics", "contents"],
+      "properties": {
+        "level": {
+          "type": "integer",
+          "minimum": 1,
+          "maximum": 4,
+          "description": "Difficulty track index (1..4)"
+        },
+        "characteristics": { "$ref": "#/$defs/characteristics" },
+        "contents": { "$ref": "#/$defs/contents" }
+      }
+    },
+
+    "characteristics": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["label", "minAge", "maxAge"],
+      "properties": {
+        "label": {
+          "type": "string",
+          "enum": ["kiddos", "tweens", "youths", "adults"],
+          "description": "Human-friendly track label"
+        },
+        "minAge": { "type": "integer", "minimum": 0, "maximum": 120 },
+        "maxAge": { "type": "integer", "minimum": 0, "maximum": 120 }
+      },
+      "allOf": [
+        {
+          "if": { "properties": { "minAge": { "type": "integer" }, "maxAge": { "type": "integer" } } },
+          "then": {
+            "properties": {},
+            "description": "Use app logic to ensure minAge <= maxAge"
+          }
+        }
+      ]
+    },
+
+    "contents": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["pageID", "UIInfo", "lessonPuzzle", "clueToNextTag"],
+      "properties": {
+        "pageID": {
+          "type": "string",
+          "pattern": "^P\\d{3}-\\d$",
+          "description": "Page identifier like P001-1"
+        },
+        "UIInfo": { "$ref": "#/$defs/uiInfo" },
+        "lessonPuzzle": { "$ref": "#/$defs/lessonPuzzle" },
+        "clueToNextTag": { "$ref": "#/$defs/clueToNextTag" }
+      }
+    },
+
+    "uiInfo": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["title", "subtitle", "picture"],
+      "properties": {
+        "title": { "type": "string", "minLength": 1 },
+        "subtitle": { "type": "string", "minLength": 1 },
+        "picture": { "type": "boolean" }
+      }
+    },
+
+    "lessonPuzzle": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "backgroundText",
+        "question",
+        "answers",
+        "successResponse",
+        "failureResponse"
+      ],
+      "properties": {
+        "backgroundText": { "type": "string", "minLength": 1 },
+        "question": { "type": "string", "minLength": 1 },
+        "answers": {
+          "type": "array",
+          "minItems": 2,
+          "items": { "$ref": "#/$defs/answerOption" }
+        },
+        "successResponse": { "type": "string", "minLength": 1 },
+        "failureResponse": { "type": "string", "minLength": 1 }
+      },
+      "allOf": [
+        {
+          "description": "At least one answer should be correct (enforced best in app logic)."
+        }
+      ]
+    },
+
+    "answerOption": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["id", "text", "isCorrect"],
+      "properties": {
+        "id": { "type": "integer", "minimum": 1 },
+        "text": { "type": "string", "minLength": 1 },
+        "isCorrect": { "type": "boolean" }
+      }
+    },
+
+    "clueToNextTag": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["text", "hint1", "hint2", "hint3"],
+      "properties": {
+        "text": { "type": "string", "minLength": 1 },
+        "hint1": { "type": "string", "minLength": 1 },
+        "hint2": { "type": "string", "minLength": 1 },
+        "hint3": { "type": "string", "minLength": 1 }
+      }
+    }
+  }
+}

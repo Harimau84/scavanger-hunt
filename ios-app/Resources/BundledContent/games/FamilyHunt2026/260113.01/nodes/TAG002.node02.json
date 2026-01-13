@@ -1,0 +1,162 @@
+{
+  "$schema": "../../../../schemas/nfc-hunt-page.schema.json",
+  "tagRef": {
+    "tagID": "TAG002",
+    "room": "Kitchen",
+    "object": "Refrigerator"
+  },
+  "node": 2,
+  "game": {
+    "gameName": "FamilyHunt2026",
+    "gameVersion": "260113.01"
+  },
+  "defaults": {
+    "locale": "en-US",
+    "timeLimitSeconds": 900,
+    "cooldownSeconds": 180,
+    "maxHints": 3
+  },
+  "gating": {
+    "requires": [1],
+    "strictOrder": true,
+    "unlockOnScan": true
+  },
+  "pages": [
+    {
+      "level": 1,
+      "characteristics": {
+        "label": "kiddos",
+        "minAge": 5,
+        "maxAge": 8
+      },
+      "contents": {
+        "pageID": "P002-1",
+        "UIInfo": {
+          "title": "Chill Clue Champion",
+          "subtitle": "You found the cool keeper—nice work, adventurer!",
+          "picture": true
+        },
+        "lessonPuzzle": {
+          "backgroundText": "Brrr! The refrigerator is like a frosty cave that keeps food safe and happy. Cold slows down tiny germs, so milk stays yummy and fruit stays fresh.",
+          "question": "What does the refrigerator help do?",
+          "answers": [
+            { "id": 1, "text": "Make food colder so it lasts longer", "isCorrect": true },
+            { "id": 2, "text": "Make pancakes fly", "isCorrect": false },
+            { "id": 3, "text": "Turn socks into spaghetti", "isCorrect": false },
+            { "id": 4, "text": "Warm up ice cream", "isCorrect": false }
+          ],
+          "successResponse": "Woohoo! You nailed it! ⭐ Now for your next quest!",
+          "failureResponse": "Ooo, close! Give it another try—your brain is warming up! 🧠✨"
+        },
+        "clueToNextTag": {
+          "text": "Now climb up, up, up like a brave staircase explorer! Find a bathroom that everyone can use. In there is a shiny throne that goes *flush!* The next secret tag is waiting near the toilet—sneaky, but not stinky. 😄",
+          "hint1": "Go upstairs using the stairs—step, step, step!",
+          "hint2": "Look for the common bathroom (the one everyone uses).",
+          "hint3": "Check near the toilet in the upstairs common bathroom."
+        }
+      }
+    },
+    {
+      "level": 2,
+      "characteristics": {
+        "label": "tweens",
+        "minAge": 9,
+        "maxAge": 12
+      },
+      "contents": {
+        "pageID": "P002-2",
+        "UIInfo": {
+          "title": "Cold Storage, Smart Move",
+          "subtitle": "You’ve unlocked the next step—keep the streak going.",
+          "picture": true
+        },
+        "lessonPuzzle": {
+          "backgroundText": "Refrigerators slow down bacteria by keeping food at a lower temperature. That’s why leftovers last longer when they’re stored cold instead of sitting out.",
+          "question": "Why does food usually last longer in the refrigerator?",
+          "answers": [
+            { "id": 1, "text": "Cold slows down bacteria growth", "isCorrect": true },
+            { "id": 2, "text": "Cold turns food into plastic", "isCorrect": false },
+            { "id": 3, "text": "The door has magical powers", "isCorrect": false },
+            { "id": 4, "text": "It makes time go backward", "isCorrect": false }
+          ],
+          "successResponse": "Correct. Clean answer. ✅ Next clue unlocked.",
+          "failureResponse": "Not quite—re-read the background text and try again. You’ve got this."
+        },
+        "clueToNextTag": {
+          "text": "Your next scan is upstairs. Find the shared bathroom—the one most people would use without needing to ask. The target is near the toilet (yes, really). Look for a spot that’s easy to reach but not obvious at first glance.",
+          "hint1": "Head upstairs first—this one isn’t on the main level.",
+          "hint2": "Find the common bathroom (not a private bedroom bathroom).",
+          "hint3": "Near the toilet in the upstairs common bathroom."
+        }
+      }
+    },
+    {
+      "level": 3,
+      "characteristics": {
+        "label": "youths",
+        "minAge": 13,
+        "maxAge": 17
+      },
+      "contents": {
+        "pageID": "P002-3",
+        "UIInfo": {
+          "title": "Temperature and Time",
+          "subtitle": "Cold doesn’t stop biology—it slows it down.",
+          "picture": true
+        },
+        "lessonPuzzle": {
+          "backgroundText": "Microorganisms that spoil food multiply more slowly at low temperatures. Refrigeration reduces their reproduction rate, which is why perishable food lasts longer when kept cold.",
+          "question": "What’s the best explanation for why refrigeration helps preserve food?",
+          "answers": [
+            { "id": 1, "text": "It slows microbial reproduction and spoilage", "isCorrect": true },
+            { "id": 2, "text": "It removes all oxygen from the food", "isCorrect": false },
+            { "id": 3, "text": "It freezes everything solid instantly", "isCorrect": false },
+            { "id": 4, "text": "It increases chemical reactions in the food", "isCorrect": false }
+          ],
+          "successResponse": "Nice. That’s the science. 🔬 Next clue is live.",
+          "failureResponse": "Nope—close, but not it. Think: microbes + temperature + growth rate."
+        },
+        "clueToNextTag": {
+          "text": "Next location is upstairs: the common bathroom. Zero mystery on the room, minor mystery on the placement. Look near the toilet—somewhere 'reachable' but not screaming for attention.",
+          "hint1": "Upstairs. Common bathroom.",
+          "hint2": "If you can hear a fan switch, you’re in the right neighborhood.",
+          "hint3": "Near the toilet in the upstairs common bathroom."
+        }
+      }
+    },
+    {
+      "level": 4,
+      "characteristics": {
+        "label": "adults",
+        "minAge": 18,
+        "maxAge": 99
+      },
+      "contents": {
+        "pageID": "P002-4",
+        "UIInfo": {
+          "title": "Operational Momentum",
+          "subtitle": "Good. Now keep moving—upstairs target next.",
+          "picture": true
+        },
+        "lessonPuzzle": {
+          "backgroundText": "Refrigeration is risk control: it reduces the rate of microbial growth and slows enzymatic activity. In practical terms, cold storage extends safe usability and reduces spoilage.",
+          "question": "Which statement best captures why refrigeration preserves food?",
+          "answers": [
+            { "id": 1, "text": "It slows microbial growth and enzymatic processes", "isCorrect": true },
+            { "id": 2, "text": "It sterilizes food by killing all bacteria instantly", "isCorrect": false },
+            { "id": 3, "text": "It makes food airtight by changing its chemistry", "isCorrect": false },
+            { "id": 4, "text": "It increases fermentation to improve shelf life", "isCorrect": false }
+          ],
+          "successResponse": "Correct. Proceed. ✅",
+          "failureResponse": "Incorrect. Reassess the mechanism: slowdown, not elimination. Try again."
+        },
+        "clueToNextTag": {
+          "text": "Proceed upstairs to the common bathroom. Next tag is staged near the toilet. Expect a low-visibility placement on a reachable surface (not inside anything).",
+          "hint1": "Upstairs common bathroom (shared).",
+          "hint2": "Placement is near the toilet—reachable, not hidden in a cabinet.",
+          "hint3": "Near the toilet in the upstairs common bathroom."
+        }
+      }
+    }
+  ]
+}
